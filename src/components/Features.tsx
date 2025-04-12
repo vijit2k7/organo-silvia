@@ -29,9 +29,10 @@ const FeatureCard = ({ feature }) => {
   const Icon = feature.icon;
   
   return (
-    <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-nature-light text-nature-dark mx-auto">
-        <Icon size={28} />
+    <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+      <div className="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-nature-light text-nature-dark mx-auto overflow-hidden relative group">
+        <div className="absolute inset-0 bg-gold scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
+        <Icon size={28} className="relative z-10 group-hover:text-white transition-colors duration-300" />
       </div>
       <h3 className="text-xl font-serif font-semibold mb-4 text-coffee-dark text-center">{feature.title}</h3>
       <p className="text-coffee-medium text-center">{feature.description}</p>

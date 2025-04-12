@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, ShoppingBag } from 'lucide-react';
 
 const products = [
   {
@@ -30,16 +30,22 @@ const products = [
 ];
 
 const ProductCard = ({ product }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-      <div className="h-64 overflow-hidden">
+    <div 
+      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 card-hover"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="h-64 overflow-hidden img-hover-zoom">
         <img 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover transition-transform duration-700"
         />
       </div>
-      <div className="p-6">
+      <div className="p-6 relative">
         <div className="flex items-center mb-2">
           {[...Array(5)].map((_, i) => (
             <Star 
@@ -49,12 +55,25 @@ const ProductCard = ({ product }) => {
             />
           ))}
         </div>
-        <h3 className="font-serif text-xl font-semibold mb-2 text-nature-dark">{product.name}</h3>
+        <h3 className="font-serif text-xl font-semibold mb-2 text-nature-dark transition-colors duration-300">{product.name}</h3>
         <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
         <div className="flex justify-between items-center">
           <span className="text-nature-dark font-bold">{product.price}</span>
-          <button className="btn-primary py-2 px-4 bg-nature-dark hover:bg-nature-light hover:text-nature-dark">Add to Cart</button>
+          <button className="group relative px-4 py-2 bg-nature-dark text-white rounded-lg overflow-hidden transition-all duration-300 hover:pl-10">
+            <span className="relative z-10">Add to Cart</span>
+            <ShoppingBag 
+              size={18} 
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full group-hover:translate-x-3 transition-transform duration-300 text-white" 
+            />
+            <div className="absolute inset-0 bg-gold origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+          </button>
         </div>
+        
+        {isHovered && (
+          <div className="absolute -right-1 -top-1 bg-gold text-white text-xs font-bold py-1 px-2 rounded-bl-lg transform rotate-12 shadow-md animate-fade-in">
+            Organic
+          </div>
+        )}
       </div>
     </div>
   );
@@ -79,7 +98,9 @@ const FeaturedProducts = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="/products" className="btn-secondary border-nature-dark text-nature-dark hover:bg-nature-light">View All Products</a>
+          <a href="/products" className="btn-secondary border-nature-dark text-nature-dark hover:bg-nature-light hover:border-nature-light transition-all duration-300">
+            View All Products
+          </a>
         </div>
       </div>
     </section>
