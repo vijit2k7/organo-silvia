@@ -119,13 +119,13 @@
 }
 
 .btn-primary {
-  @apply px-6 py-3 bg-coffee-dark hover:bg-coffee-medium text-white rounded-lg transition-colors duration-200 inline-block font-medium;
+  @apply px-6 py-3 bg-nature-dark hover:bg-nature-medium text-white rounded-lg transition-colors duration-200 inline-block font-medium;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 bg-transparent hover:bg-cream border border-coffee-dark text-coffee-dark hover:text-coffee-dark rounded-lg transition-colors duration-200 inline-block font-medium;
+  @apply px-6 py-3 bg-transparent hover:bg-cream border border-nature-dark text-nature-dark hover:text-nature-dark rounded-lg transition-colors duration-200 inline-block font-medium;
 }
 
 .divider {
-  @apply h-px w-16 bg-coffee-medium my-6;
+  @apply h-px w-16 bg-nature-medium my-6;
 }

@@ -34,7 +34,7 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "OrganoSilvia - Premium Organic Coffee";
+    document.title = "OrganoSilvia - Premium Organic Products";
   }, []);
 
   return (
