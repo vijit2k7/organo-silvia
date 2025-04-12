@@ -31,11 +31,27 @@ export default {
 					light: '#D7CCC8'
 				},
 				nature: {
-					dark: '#7CB342',
-					light: '#AED581'
+					dark: '#4CAF50',
+					light: '#8BC34A',
+					accent: '#00BCD4'
 				},
 				cream: '#FFF8E1',
-				gold: '#FFD54F',
+				gold: '#FFD700',
+				teal: {
+					light: '#B2DFDB',
+					medium: '#4DB6AC',
+					dark: '#009688'
+				},
+				lavender: {
+					light: '#E1BEE7',
+					medium: '#9C27B0',
+					dark: '#673AB7'
+				},
+				rose: {
+					light: '#FFCDD2',
+					medium: '#E57373',
+					dark: '#F44336'
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -146,6 +162,22 @@ export default {
           '100%': {
             transform: 'scale(1.05)'
           }
+        },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-10px)'
+          }
+        },
+        'shimmer': {
+          '0%': {
+            backgroundPosition: '-200% 0'
+          },
+          '100%': {
+            backgroundPosition: '200% 0'
+          }
         }
 			},
 			animation: {
@@ -155,7 +187,13 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out',
 				'bounce': 'bounce 1s infinite',
 				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-				'scale': 'scale 0.3s ease-in-out'
+				'scale': 'scale 0.3s ease-in-out',
+				'float': 'float 3s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'shimmer-gradient': 'linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 100%)'
 			}
 		}
 	},
