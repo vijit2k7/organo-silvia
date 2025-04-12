@@ -8,16 +8,16 @@ const CTA = () => {
         <div className="absolute inset-0 bg-coffee-dark/80 z-10"></div>
         <img 
           src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1561&q=80" 
-          alt="Coffee" 
+          alt="Natural Ingredients" 
           className="w-full h-full object-cover"
         />
       </div>
 
       <div className="container-custom relative z-20 text-center px-4">
-        <h2 className="h2 text-white mb-6">Join Our Coffee Community</h2>
+        <h2 className="h2 text-white mb-6">Join Our Organic Community</h2>
         <div className="divider bg-gold mx-auto"></div>
         <p className="text-white text-lg max-w-2xl mx-auto mb-8">
-          Subscribe to our newsletter for exclusive offers, brewing tips, and updates on our latest products.
+          Subscribe to our newsletter for exclusive offers, care tips, and updates on our latest products.
         </p>
         
         <div className="max-w-md mx-auto">
